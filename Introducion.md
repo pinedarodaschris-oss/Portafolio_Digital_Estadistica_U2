@@ -1,9 +1,9 @@
-# 🧩 Unidad 2: Inferencia Estadística y Modelado Algorítmico  
+# 🧩 Unidad 2: Inferencia Estadística y Modelado Algorítmico (Grupo D)
 
 ---
 
 ## 📊 Distribuciones Muestrales e Intervalos de Confianza (APE 06 - APE 09)
-> Estudio de estimadores puntuales, variabilidad muestral y construcción de intervalos de confianza ($Z$ y $T$ de Student) aplicados a la epidemiología.
+> Análisis de estimadores puntuales, error estándar y simulación de intervalos de confianza ($Z$ y $T$ de Student) sobre modelos analíticos.
 
 * [Guía APE 06: Distribuciones Muestrales](./Guias_Laboratorio_Corregidas/APE_06_Distribuciones_Muestrales.pdf)
 * [Guía APE 07: Estimación Puntual](./Guias_Laboratorio_Corregidas/APE_07_Estimacion_Puntual.pdf)
@@ -13,39 +13,41 @@
 ---
 
 ## ⚖️ Pruebas de Hipótesis y Comparación de Grupos (APE 10 - APE 11)
-> Diseño de contrastes paramétricos unimuestrales y análisis de variabilidad múltiple mediante algoritmos de ANOVA de 1 Factor.
+> Parametrización de contrastes de hipótesis unimuestrales, control del error Alfa y análisis de variabilidad múltiple.
 
-* [Guía APE 10: Pruebas de Hipótesis Paramétricas](./Guias_Laboratorio_Corregidas/APE010_Interferencia_EstadisticaPruebas_deHip%C3%B3tesis_Param%C3%A9tricas_(Z_y_T)_y%20An%C3%A1lisisdel_Valor-p.pdf)
-* [Guía APE 11: Análisis de Varianza (ANOVA)](./Guias_Laboratorio_Corregidas/APE_11_Varianza(ANOVA).pdf)
+* [Guía APE 10: Pruebas de Hipótesis Paramétricas y Valor-p](./Guias_Laboratorio_Corregidas/APE010_Interferencia_EstadisticaPruebas_deHip%C3%B3tesis_Param%C3%A9tricas_(Z_y_T)_y%20An%C3%A1lisisdel_Valor-p.pdf)
+* [Guía APE 11: Análisis de Varianza (ANOVA) y Post-Hoc](./Guias_Laboratorio_Corregidas/APE_11_Varianza(ANOVA).pdf)
 
 ---
 
-## 🧪 Evaluación Sumativa Final: Inferencia en Casos de Dengue (Región Loja)  
-> Hito integrador del PID-2025 que aplica las fronteras de la inferencia estadística sobre el dataset real del MSP.
+## 🧪 Evaluación Sumativa Final: Inferencia en Casos de Dengue (Región Loja)
+> Componente práctico e hito integrador del PID-2025 que evalúa el comportamiento epidemiológico regional del MSP.
 
 * [Cuaderno de Código en Google Colab (.ipynb)](./Evaluacion_Sumativa_Final/Evaluacion_Sumativa_Final_Dengue_Loja.ipynb)
-* [Fuente de Datos (Dataset CSV)](./Evaluacion_Sumativa_Final/Datos_Dengue_MSP_Ene2021_Ago2025.csv)
+* [Fuente de Datos (Dataset Excel Original)](./Evaluacion_Sumativa_Final/Datos_Dengue_MSP_Ene2021_Ago2025.xlsx)
 
-### 📌 Descripción del Problema  
-Contraste de la media de casos de Dengue por registro en Loja frente a un parámetro teórico mediante una prueba $T$ unimuestral, seguido de un análisis de varianza (ANOVA de 1 factor) para determinar si existen diferencias significativas en las medias de contagio entre los cantones con mayor densidad de reportes de la provincia.
+### 📌 Descripción del Problema
+Contraste de la media de casos de Dengue por registro en la provincia de Loja frente a un parámetro teórico mediante una prueba $T$ unimuestral, acoplado a un Análisis de Varianza (ANOVA de 1 factor) para determinar si existen discrepancias significativas entre las medias de contagio de los cantones con mayor volumen de reporte en la región.
 
 ### 📊 Formulación Matemática de las Hipótesis
 
-**Contraste Unimuestral (Edad/Casos):**
-* $H_0: \mu = 2$ 
-* $H_1: \mu \neq 2$
+**1. Contraste Unimuestral (Casos Totales):**
+* $$H_0: \mu = 2$$
+* $$H_1: \mu \neq 2$$
 
-**Comparación de Grupos (Cantones):**
-* $H_0: \mu_{\text{Canton1}} = \mu_{\text{Canton2}} = \dots = \mu_{\text{CantonK}}$
-* $H_1: \exists \, i, j \quad \text{tal que} \quad \mu_i \neq \mu_j$
+**2. Análisis de Varianza (Cantones Independientes):**
+* $$H_0: \mu_{\text{Canton1}} = \mu_{\text{Canton2}} = \dots = \mu_{\text{CantonK}}$$
+* $$H_1: \exists \, i, j \quad \text{tal que} \quad \mu_i \neq \mu_j$$
 
-### 💻 Fragmento de Implementación Crítica
+### 💻 Programa (Implementación Crítica en Python)
 ```python
-# Abstracción avanzada con scipy.stats para ANOVA de 1 Factor
-f_statistic, p_value_anova = stats.f_oneway(*grupos_anova)
-print(f"Estadístico F: {f_statistic:.4f} | Valor p (ANOVA): {p_value_anova:.4f}")
+# Contraste t de una muestra mediante scipy.stats
+t_statistic, p_value = stats.ttest_1samp(total_cases_loja, mu_hipotetica)
 
-# Algoritmo Post-Hoc de Tukey HSD para control del Error Tipo I
+# ANOVA de un factor para subgrupos de cantones seleccionados
+f_statistic, p_value_anova = stats.f_oneway(*grupos_anova)
+
+# Ajuste Post-Hoc de Tukey HSD para el control de la inflación del error Tipo I
 tukey_result = pairwise_tukeyhsd(endog=data_for_tukey['Total_Cases'],
                                  groups=data_for_tukey['Canton'],
                                  alpha=0.05)
