@@ -5,18 +5,17 @@
 ## 📊 Distribuciones Muestrales e Intervalos de Confianza (APE 06 - APE 09)
 > Análisis de estimadores puntuales, error estándar y simulación de intervalos de confianza ($Z$ y $T$ de Student) sobre modelos analíticos.
 
-* [Guía APE 06: Distribuciones Muestrales](./Guias_Laboratorio_Corregidas/APE_06_Distribuciones_Muestrales.pdf)
-* [Guía APE 07: Estimación Puntual](./Guias_Laboratorio_Corregidas/APE_07_Estimacion_Puntual.pdf)
-* [Guía APE 08: Intervalos de Confianza](./Guias_Laboratorio_Corregidas/APE_08_Intervalos_Confianza.pdf)
-* [Guía APE 09: Modelado de Intervalos en Loja](./Guias_Laboratorio_Corregidas/APE_009_Intervalos%20(1).pdf)
+* [Guía APE 07: Estimación Puntual](./Guias_Laboratorio_Corregidas/APE_007_Normal.ipynb)
+* [Guía APE 08: Intervalos de Confianza](./Guias_Laboratorio_Corregidas/APE_008_TLC.ipynb)
+* [Guía APE 09: Modelado de Intervalos en Loja](./Guias_Laboratorio_Corregidas/APE_009_Intervalos.ipynb)
 
 ---
 
 ## ⚖️ Pruebas de Hipótesis y Comparación de Grupos (APE 10 - APE 11)
 > Parametrización de contrastes de hipótesis unimuestrales, control del error Alfa y análisis de variabilidad múltiple.
 
-* [Guía APE 10: Pruebas de Hipótesis Paramétricas y Valor-p](./Guias_Laboratorio_Corregidas/APE010_Interferencia_EstadisticaPruebas_deHip%C3%B3tesis_Param%C3%A9tricas_(Z_y_T)_y%20An%C3%A1lisisdel_Valor-p.pdf)
-* [Guía APE 11: Análisis de Varianza (ANOVA) y Post-Hoc](./Guias_Laboratorio_Corregidas/APE_11_Varianza(ANOVA).pdf)
+* [Guía APE 10: Pruebas de Hipótesis Paramétricas y Valor-p](./Guias_Laboratorio_Corregidas/APE010_Interferencia_EstadisticaPruebas_deHipótesis_Paramétricas_(Z_y_T)_yAnálisisdel.ipynb).
+* [Guía APE 11: Análisis de Varianza (ANOVA) y Post-Hoc](./Guias_Laboratorio_Corregidas/APE_11_Varianza(ANOVA).ipynb)
 
 ---
 
