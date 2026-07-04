@@ -22,7 +22,7 @@
 ## 🧪 Evaluación Sumativa Final: Inferencia en Casos de Dengue (Región Loja)
 > Componente práctico e hito integrador del PID-2025 que evalúa el comportamiento epidemiológico regional del MSP.
 
-* [Cuaderno de Código en Google Colab (.ipynb)](./Evaluacion_Sumativa_Final/Evaluacion_Sumativa_Final_Dengue_Loja.ipynb)
+* [Cuaderno de Código en Google Colab (.ipynb)](./Evaluacion_Sumativa_Final/Evaluación_Sumativa_Unidad_02.ipynb)
 * [Fuente de Datos (Dataset Excel Original)](./Evaluacion_Sumativa_Final/Datos_Dengue_MSP_Ene2021_Ago2025.xlsx)
 
 ### 📌 Descripción del Problema
